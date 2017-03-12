@@ -1,0 +1,42 @@
+################
+##Course
+################
+
+has many units
+
+name:string
+
+################
+##Unit
+################
+
+belongs_to course
+has many subus
+has many lesson through subus
+
+name:string
+course_id:integer
+
+################
+##Subu
+################
+
+belongs_to unit
+has many lessons
+
+name:string
+unit_id:integer
+
+################
+##Lesson
+################
+
+belongs_to lesson
+has one unit, through subu
+
+name:string
+learn_link:string
+github_link:string
+flat_file:name
+solution:boolean
+subu_id:integer
